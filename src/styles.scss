@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+body {
+  background-color: rgba(240, 240, 240, 255);
+}
+.p-card {
+  box-shadow: none;
+  border-radius: 15px 15px 80px 15px;
+}

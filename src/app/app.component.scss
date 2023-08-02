@@ -1,0 +1,23 @@
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.left {
+  margin-left: 25px;
+}
+
+label,
+input {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  color: rgba(137, 137, 137, 255);
+  font-weight: 600;
+  width: 120px;
+}
+hr {
+  margin-top: 50px;
+  width: 400px;
+}
