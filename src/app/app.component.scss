@@ -10,6 +10,10 @@
   margin-right: 155px;
 }
 
+.error {
+  display: flex;
+}
+
 label,
 input {
   font-family: "poppins";
@@ -23,10 +27,10 @@ input {
 
 hr {
   margin-top: 30px;
-  width: 500px;
+  width: 530px;
 }
 .align {
-  margin-right: 50px;
+  margin-right: 20px;
 }
 .margin-right {
   margin-left: 25px;
