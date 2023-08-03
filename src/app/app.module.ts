@@ -4,10 +4,17 @@ import { CardModule } from 'primeng/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, CardModule, InputTextModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CardModule,
+    InputTextModule,
+    ButtonModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

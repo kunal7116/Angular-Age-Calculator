@@ -4,12 +4,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.left {
+
+.margin {
   margin-left: 25px;
+  margin-right: 155px;
 }
 
 label,
 input {
+  font-family: "poppins";
   margin-top: 8px;
   display: flex;
   flex-direction: column;
@@ -17,7 +20,26 @@ input {
   font-weight: 600;
   width: 120px;
 }
+
 hr {
-  margin-top: 50px;
-  width: 400px;
+  margin-top: 30px;
+  width: 500px;
+}
+.align {
+  margin-right: 50px;
+}
+.margin-right {
+  margin-left: 25px;
+}
+.dash {
+  font-family: "poppins";
+  font-size: 80px;
+  font-weight: bolder;
+  color: rgba(134, 76, 255, 255);
+}
+.font {
+  font-family: "poppins";
+  font-size: 80px;
+  color: black;
+  font-style: italic;
 }
