@@ -7,25 +7,36 @@
 body {
   background-color: rgba(240, 240, 240, 255);
 }
+
 .p-card {
+  border-radius: 8px 8px 200px 8px;
+  border-color: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+  height: 500px;
   box-shadow: none;
-  border-radius: 15px 15px 200px 15px;
 }
 .p-button {
-  float: right;
-  margin-top: -45px;
-  background: rgba(134, 76, 255, 255);
-  border: 1px solid rgba(134, 76, 255, 255);
+  background-color: rgba(134, 76, 255, 255);
+  border: none;
 }
 
 .p-button.p-button-icon-only.p-button-rounded {
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
+  color: white;
+  position: absolute;
+  top: 24%; /* Position at the end of the hr line */
+  right: 0;
+  transform: translate(-70%, 10%);
+}
+
+.pi {
+  font-size: 2rem;
 }
 .p-button.p-button-icon-only.p-button-rounded:hover {
-  background: black;
-  border: 1px solid black;
-}
-.pi {
-  font-size: 2.5rem;
+  background-color: black;
 }

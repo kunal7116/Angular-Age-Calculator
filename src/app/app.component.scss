@@ -1,49 +1,44 @@
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.margin {
-  margin-left: 25px;
-  margin-right: 155px;
-}
-
-.error {
-  display: flex;
-}
-
-label,
 input {
+  margin-top: 5px;
   font-family: "poppins";
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  color: rgba(137, 137, 137, 255);
-  font-weight: 600;
   width: 120px;
+  height: 55px;
 }
 
-hr {
-  margin-top: 30px;
-  width: 530px;
+input::placeholder {
+  color: rgba(140, 140, 140, 255);
+  font-family: "poppins";
+  font-size: 23px;
+  font-weight: bolder;
+  text-align: left;
 }
-.align {
-  margin-right: 20px;
+
+label {
+  color: rgba(140, 140, 140, 255);
+  font-size: small;
+  font-weight: bold;
 }
-.margin-right {
-  margin-left: 25px;
+
+.col-md-4:not(:first-child) {
+  margin-left: -50px; /* Adjust the negative margin as needed */
+}
+.line {
+  top: 28%;
+  position: absolute;
+  width: 500px;
+}
+.output {
+  top: 40%;
+  position: absolute;
+}
+.block {
+  margin-top: -30px;
+  font-family: "poppins";
+  display: block;
+  font-size: 70px;
+  font-style: italic;
+  color: black;
 }
 .dash {
-  font-family: "poppins";
-  font-size: 80px;
-  font-weight: bolder;
   color: rgba(134, 76, 255, 255);
-}
-.font {
-  font-family: "poppins";
-  font-size: 80px;
-  color: black;
-  font-style: italic;
 }

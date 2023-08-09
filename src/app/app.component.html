@@ -1,73 +1,121 @@
-<p-card class="card">
-  <form [formGroup]="addDate" (ngSubmit)="calculateAge()">
-    <div style="display: inline-block; margin-right: 20px">
-      <label for="day">DAY</label>
-      <input
-        pInputText
-        type="text"
-        id="day"
-        placeholder="DD"
-        minlength="1"
-        maxlength="2"
-        pKeyFilter="int"
-        formControlName="day"
-      />
-    </div>
-    <span
-      class="error"
-      style="color: red"
-      *ngIf="day && day.invalid && day.touched"
-      >Please enter day</span
-    >
-    <div style="display: inline-block; margin-right: 20px">
-      <label for="month">MONTH</label>
-      <input
-        pInputText
-        type="text"
-        id="month"
-        placeholder="MM"
-        minlength="1"
-        maxlength="2"
-        pKeyFilter="int"
-        formControlName="month"
-      />
-    </div>
-    <div style="display: inline-block; margin-right: 20px">
-      <label for="year">YEAR</label>
-      <input
-        pInputText
-        type="text"
-        id="year"
-        placeholder="YYYY"
-        minlength="4"
-        maxlength="4"
-        pKeyFilter="int"
-        formControlName="month"
-      />
-    </div>
-    <div class="align">
-      <hr />
+<p-card>
+  <ng-template pTemplate="content">
+    <form [formGroup]="addDate" (ngSubmit)="onCalculateAge()">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="day">DAY</label>
+            <input
+              pInputText
+              type="text"
+              id="day"
+              class="form-control input-small"
+              placeholder="DD"
+              formControlName="day"
+              pKeyFilter="int"
+              maxlength="2"
+              min="1"
+              max="31"
+            />
+          </div>
+          <div *ngIf="f['day'].invalid && (f['day'].dirty || f['day'].touched)">
+            <small class="p-error" *ngIf="f['day'].errors?.['required']">
+              This Field is required.
+            </small>
+            <small class="p-error" *ngIf="f['day'].errors?.['min']">
+              Must be a valid date
+            </small>
+            <small class="p-error" *ngIf="f['day'].errors?.['max']">
+              Must be a valid date
+            </small>
+            <small class="p-error" *ngIf="f['day'].errors?.['invalidDay']">
+              Must be a valid date
+            </small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="month">MONTH</label>
+            <input
+              pInputText
+              type="text"
+              id="month"
+              class="form-control input-small"
+              placeholder="MM"
+              formControlName="month"
+              pKeyFilter="int"
+              maxlength="2"
+              min="1"
+              max="12"
+            />
+          </div>
+          <div
+            *ngIf="
+              f['month'].invalid && (f['month'].dirty || f['month'].touched)
+            "
+          >
+            <small class="p-error" *ngIf="f['month'].errors?.['required']">
+              This Field is required.
+            </small>
+            <small class="p-error" *ngIf="f['month'].errors?.['min']">
+              Must be a valid month
+            </small>
+            <small class="p-error" *ngIf="f['month'].errors?.['max']">
+              Must be a valid month
+            </small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="year">YEAR</label>
+            <input
+              pInputText
+              type="text"
+              id="year"
+              class="form-control"
+              placeholder="YYYY"
+              formControlName="year"
+              pKeyFilter="int"
+              maxlength="4"
+            />
+          </div>
+          <div
+            *ngIf="f['year'].invalid && (f['year'].dirty || f['year'].touched)"
+          >
+            <small class="p-error" *ngIf="f['year'].errors?.['required']">
+              This Field is required.
+            </small>
+            <small class="p-error" *ngIf="f['year'].errors?.['invalidYear']">
+              Must be in the past
+            </small>
+          </div>
+        </div>
+      </div>
+      <hr class="line" />
       <p-button
         pRipple
         type="submit"
         icon="pi pi-arrow-down"
         styleClass="p-button-rounded"
+        onclick="onCalculateAge()"
       ></p-button>
+    </form>
+    <div *ngIf="ageResult">
+      <div class="output">
+        <span class="block">
+          <span class="dash">{{ ageResult.years || "--" }} </span
+          ><span class="font">years</span>
+        </span>
+        <span class="block">
+          <span class="dash">{{ ageResult.months || "--" }} </span>
+
+          <span class="font">months</span>
+        </span>
+        <span class="block">
+          <span class="dash">{{ ageResult.days || "--" }} </span>
+          <span class="font">days</span>
+        </span>
+      </div>
     </div>
-  </form>
-
-  <div class="margin-right">
-    <span style="display: block">
-      <span class="dash">--</span><span class="font">years</span>
-    </span>
-    <span style="margin-top: -35px; display: block">
-      <span class="dash">--</span>
-
-      <span class="font">months</span>
-    </span>
-    <span style="margin-top: -35px; display: block">
-      <span class="dash">--</span>
-      <span class="font">days</span>
-    </span>
-  </div>
+  </ng-template>
 </p-card>
